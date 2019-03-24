@@ -5,13 +5,15 @@ import { Provider as ReduxProvider } from "react-redux";
 import  {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import configureStore from "./modules/store";
 import LoginAdminJonkers from "./components/Login";
+import Principal from "./components/Principal";
 
 const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
 
 const routing = (
   <Router>
     <Switch>
-      <Route exact path="/" component={LoginAdminJonkers}></Route>
+      <Route exact path="/" component={Principal}></Route>
+      <Route path="/Login" component={LoginAdminJonkers}></Route>
     </Switch>
   </Router>
 );
