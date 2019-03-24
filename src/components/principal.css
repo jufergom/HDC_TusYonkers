@@ -33,7 +33,7 @@ div.contenedor {
 
 /*Navegacion*/
 .navegacion {
-    background-color: #db008d;
+    background-color: #4eaec5;
 }
 
 nav {
@@ -84,4 +84,9 @@ nav ul li:hover > ul {
 
 nav ul li:hover {
     background-color: rgba(0, 184, 228, 0.7);
+}
+
+.NavBar{
+    align-items: center;
+    padding-left: 8%;
 }

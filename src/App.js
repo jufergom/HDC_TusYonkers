@@ -6,6 +6,7 @@ import  {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import configureStore from "./modules/store";
 import LoginAdminJonkers from "./components/Login";
 import Principal from "./components/Principal";
+import ChatClientService from "./components/Chat";
 
 const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
 
@@ -14,6 +15,7 @@ const routing = (
     <Switch>
       <Route exact path="/" component={Principal}></Route>
       <Route path ="/Login" component={LoginAdminJonkers}></Route>
+      <Route path ="/Contact" component={ChatClientService}></Route>
     </Switch>
   </Router>
 );

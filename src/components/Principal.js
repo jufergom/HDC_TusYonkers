@@ -15,18 +15,14 @@ class Principal extends Component {
                 </header>
                 <div className="navegacion">
                     <nav>
-                        <ul>
+                        <ul className="NavBar">
                         <li><a href="#">Yonkers</a></li>
-                        <ul>
-                            <li><a href="#">Mision</a></li>
-                            <li><a href="#">Vision</a></li>
-                            <li><a href="#">Valores</a></li>
-                            </ul>
+                        
                         <li><a href="#">Repuestos</a>
                             <ul>
-                            <li><a href="#">Mision</a></li>
-                            <li><a href="#">Vision</a></li>
-                            <li><a href="#">Valores</a></li>
+                            <li><a href="#">Carros</a></li>
+                            <li><a href="#">Motos</a></li>
+                            <li><a href="#">Bicicletas</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Autos</a>
@@ -35,7 +31,7 @@ class Principal extends Component {
                             <li><a href="#">Manual</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Contactanos</a></li>
+                        <li><Link to="/Contact">Contactanos</Link></li>
                         <li><Link to="/Login">Iniciar Sesion</Link></li>
                         </ul>
                     </nav>
