@@ -1,0 +1,87 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    padding: 20px;
+    /*El primero es arriba y abajo y el segundo es izquierda y derecha */
+}
+
+div.contenedor {
+    width: 50%;
+}
+
+.logoImage {
+    padding-top: 0%;
+    width: 50%;
+    height: 50%;
+    left: 0%;
+}
+
+/*Navegacion*/
+.navegacion {
+    background-color: #db008d;
+}
+
+nav {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+}
+
+/*Seleccionamos el primer nivel de ul y el primer nivel de li*/
+nav > ul > li {
+    float: left;
+}
+
+nav ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+nav ul li a{
+    display: inline-block;
+    width: 200px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+}
+/*hover me imagino que es para cuando se pasa el mouse encima de esos tags*/
+nav ul li a:hover {
+    background-color: #00b8e4;
+}
+
+/*Segundo nivel*/
+nav ul ul {
+    position: absolute;
+    top: 100%;
+    background-color: rgba(0, 184, 228, 0.7);
+    display: none;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul li:hover {
+    background-color: rgba(0, 184, 228, 0.7);
+}
