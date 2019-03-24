@@ -8,6 +8,9 @@ import LoginAdminJonkers from "./components/Login";
 import Principal from "./components/Principal";
 import ChatClientService from "./components/Chat";
 import AdminFrom from "./components/Admin";
+import ListCars from "./components/ListCars";
+import ListBici from "./components/ListBici";
+import ListMoto from "./components/ListMoto";
 
 const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
 
@@ -18,6 +21,9 @@ const routing = (
       <Route path ="/Login" component={LoginAdminJonkers}></Route>
       <Route path ="/Contact" component={ChatClientService}></Route>
       <Route path ="/Admin" component={AdminFrom}></Route>
+      <Route path="/ListCars" component={ListCars}></Route>
+      <Route path="/ListBike" component={ListBici}></Route>
+      <Route path="/ListMoto" component={ListMoto}></Route>
     </Switch>
   </Router>
 );

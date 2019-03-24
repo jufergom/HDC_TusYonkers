@@ -43,3 +43,7 @@ min-height: 100vh;
 .App {
   text-align: center;
 }
+.navegacion{
+  z-index: 1;
+  position: relative;
+}

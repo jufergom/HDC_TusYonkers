@@ -90,3 +90,8 @@ nav ul li:hover {
     align-items: center;
     padding-left: 10%;
 }
+
+.navegacion{
+    z-index: 1;
+    position: relative;
+}

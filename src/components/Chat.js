@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {withStyles, Button, TextField, Card, CardHeader, Avatar, CardContent, Typography} from "@material-ui/core";
 import Principal from "./Principal";
+import NavBar from "./NavBar";
 const styles=theme=>({
     card: {
         maxWidth: 400,
@@ -44,7 +45,7 @@ class ChatClientService extends Component{
             <div>
               <div className={classes.container}> 
                 <header>
-                  <Principal/>
+                  <NavBar/>
                 </header>
               </div>
                 <Card className={classes.card}>
@@ -70,12 +71,7 @@ class ChatClientService extends Component{
                         variant="outlined"
                         label = "Apellido"
                         />
-                        <br/>
-                        <TextField 
-                        className={classes.textField}
-                        variant="outlined"
-                        label = "Apellido"
-                        />
+                        
                         <br/>
                         <TextField 
                         className={classes.textField}
