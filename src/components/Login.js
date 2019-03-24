@@ -21,7 +21,7 @@ const styles=theme=>({
     margin: theme.spacing.unit,
   },
   HD :{
-      marginTop: '5%',
+      marginTop: '5%'
   },
   imageLog:{
     width: '50%',
