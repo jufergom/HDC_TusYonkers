@@ -24,6 +24,16 @@ const style =theme=>({
         width: 400,
         height: 300,
     },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+        height: 50,
+        position: 'absolute',
+        bottom: '2%',
+        left: '42%',
+        backgroundColor: '#ffffff', 
+      },
 });
 const mapStateToProps = state => ({
     ItemsYonker: state.items
@@ -35,6 +45,10 @@ class ListMoto extends Component{
         this.state={
             SMoto:'',
         }
+    }
+
+    handleChange=(name,event)=>{
+        this.setState({[name]: event.target.value});
     }
 
     render(){
@@ -62,6 +76,15 @@ class ListMoto extends Component{
                             })}
                         </GridList>
                     </Paper>
+                    <div>
+                        <TextField
+                        className={classes.textField}
+                        label="Buscar"
+                        value={this.state.SMoto}
+                        onChange={this.handleChange.bind(this,'SMoto')}
+                        variant="filled"
+                        />
+                    </div>
             </div>
         );
     }

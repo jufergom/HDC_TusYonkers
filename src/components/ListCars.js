@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {withStyles, Button,GridList,ListItem,ListItemAvatar,ListItemText,Avatar, Paper, TextField, Dialog} from "@material-ui/core";
+import {withStyles, Button,GridList,ListItem,ListItemAvatar,ListItemText,Avatar, Paper, TextField, Dialog, Chip} from "@material-ui/core";
 import { connect } from "react-redux";
 import NavBar from "./NavBar";
 
@@ -24,6 +24,16 @@ const style =theme=>({
         width: 400,
         height: 300,
     },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+        height: 50,
+        position: 'absolute',
+        bottom: '2%',
+        left: '42%',
+        backgroundColor: '#ffffff',
+      },
 });
 const mapStateToProps = state => ({
     ItemsYonker: state.items
@@ -35,6 +45,9 @@ class ListCars extends Component{
         this.state={
             SCar:'',
         }
+    }
+    handleChange=(name,event)=>{
+        this.setState({[name]: event.target.value});
     }
 
     render(){
@@ -62,6 +75,19 @@ class ListCars extends Component{
                             })}
                         </GridList>
                     </Paper>
+                    <div>
+                        <div>
+
+                    <TextField
+                        className={classes.textField}
+                        label="Buscar"
+                        value={this.state.SCar}
+                        onChange={this.handleChange.bind(this,'SCar')}
+                        variant="filled"
+                        />
+                    
+                        </div>
+                    </div>
             </div>
         );
     }
