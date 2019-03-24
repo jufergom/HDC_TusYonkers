@@ -1,27 +1,40 @@
 import React, { Component } from "react";
 import {withStyles, Button, Paper, TextField} from "@material-ui/core";
+import imgL from '../images/Logo1.png'
+import ChatClientService from './Chat';
 
 const styles=theme=>({
     root: {
         ...theme.mixins.gutters(),
         paddingBottom: theme.spacing.unit * 2,
         height: 'auto',
-        width: 300,
+        width: 250,
+        alignItems: 'center'
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     width: 200,
+    height: 50,
   },
   button: {
     margin: theme.spacing.unit,
   },
   HD :{
-      marginTop: '30%',
+      marginTop: '5%',
+  },
+  imageLog:{
+    width: '50%',
+    height: '50%',
+  },
+  forms:{
+    alignItems: 'center',
+    position: 'absolute',
+    left: '40%'
   }
 });
 
-const NextPage = <div></div>;
+/*const NextPage = <ChatClientService/>*/
 
 class LoginAdminJonkers extends Component{
     constructor(pros){
@@ -30,6 +43,7 @@ class LoginAdminJonkers extends Component{
           user:'',
           password:'',
           check: false,
+          test: false,
         }
       }
     
@@ -38,39 +52,49 @@ class LoginAdminJonkers extends Component{
       };
     
       CheckAccount =()=>{
-        
+       /*if(this.state.test===false){
+          this.setState({test: true})
+        }else{
+          this.setState({test: false})
+        }*/
       }
 
     render(){
         const { classes } = this.props;
         return(
             <div>
-              {/*crcrw*/}
                 <form>
-                <header className={classes.HD}/>
-                    <Paper className={classes.root}>
-                    <TextField
-                    id="U"
-                    label="Username"
-                    className={classes.textField}
-                    value={this.state.user}
-                    onChange={this.handleChange.bind(this,'user')}
-                    margin="normal"
-                    />
-                    <br/>
-                    <TextField
-                    id="P"
-                    label="Password"
-                    className={classes.textField}
-                    value={this.state.password}
-                    onChange={this.handleChange.bind(this,'password')}
-                    margin="normal"
-                    />
+                <header className={classes.HD}>
+                  <img src={imgL} className={classes.imageLog} alt="Logo"/>
+                </header>
 
-                    <br/>
+                <div className={classes.forms}>
+                      <Paper className={classes.root}>
+                      <TextField
+                      id="U"
+                      label="Username"
+                      className={classes.textField}
+                      value={this.state.user}
+                      onChange={this.handleChange.bind(this,'user')}
+                      margin="normal"
 
-                    <Button variant="contained" color="primary" className={classes.button}>Enter</Button>
-                    </Paper>
+                      />
+                      <br/>
+                      <TextField
+                      id="P"
+                      label="Password"
+                      className={classes.textField}
+                      value={this.state.password}
+                      onChange={this.handleChange.bind(this,'password')}
+                      margin="normal"
+
+                      />
+
+                      <br/>
+
+                      <Button variant="contained" color="primary" className={classes.button} onClick={this.CheckAccount.bind(this)} >Enter</Button>
+                      </Paper>
+                    </div>
                 </form>
             </div>
         );
