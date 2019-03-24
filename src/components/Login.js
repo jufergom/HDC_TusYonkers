@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {withStyles, Button, Paper, TextField} from "@material-ui/core";
+import {withStyles, Button, Paper, TextField, Dialog} from "@material-ui/core";
 import imgL from '../images/Logo1.png'
 import Link from "react-router-dom/Link";
 import { Redirect } from "react-router-dom";
@@ -36,6 +36,7 @@ const styles=theme=>({
 });
 
 const NextPage = <Redirect to="/Admin"/>
+const Mensaje = <h3 style={{color:'#000000'}}>Contraseña o Usuario Incorrecto</h3>
 
 class LoginAdminJonkers extends Component{
     constructor(pros){
@@ -43,7 +44,8 @@ class LoginAdminJonkers extends Component{
         this.state ={
           user:'',
           password:'',
-          
+          check:false,
+          check2:false,
         }
       }
     
@@ -57,6 +59,11 @@ class LoginAdminJonkers extends Component{
         }else{
           this.setState({test: false})
         }*/
+        if(this.state.user==='Admin' && this.state.password==='masterkey'){
+          this.setState({check: true});
+        }else{
+          this.setState({check2: true});
+        }
       }
 
     render(){
@@ -67,7 +74,12 @@ class LoginAdminJonkers extends Component{
                 <header className={classes.HD}>
                   <img src={imgL} className={classes.imageLog} alt="Logo"/>
                 </header>
-
+                <div>
+                  {this.state.check?
+                    NextPage:
+                    <p></p>
+                  }
+                </div>
                 <div className={classes.forms}>
                       <Paper className={classes.root}>
                       <TextField
@@ -87,13 +99,21 @@ class LoginAdminJonkers extends Component{
                       value={this.state.password}
                       onChange={this.handleChange.bind(this,'password')}
                       margin="normal"
-
+                      type="password"
                       />
 
                       <br/>
 
                       <Button variant="contained" color="primary" className={classes.button} onClick={this.CheckAccount.bind(this)} >Entrar</Button>
                       <Button variant="contained" color="primary" component={Link} to="/" className={classes.button}>Atras</Button>
+
+                      <br/>
+                      <div>
+                        {this.state.check2?
+                          Mensaje:
+                          <p></p>
+                        }
+                      </div>
                       </Paper>
                     </div>
                 </form>

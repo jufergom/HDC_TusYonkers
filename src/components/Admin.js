@@ -101,7 +101,43 @@ const styles =theme=>({
     list:{
         alignItems: 'center',
         textAlign: 'center',
-    }
+    },
+    textField1: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+        height: 50,
+        position: 'absolute',
+        bottom: '7%',
+        left: '4%'
+      },
+      textField2: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+        height: 50,
+        position: 'absolute',
+        bottom: '7%',
+        left: '28%'
+      },
+      textField3: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+        height: 50,
+        position: 'absolute',
+        bottom: '7%',
+        left: '54%'
+      },
+      textField4: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+        height: 50,
+        position: 'absolute',
+        bottom: '7%',
+        left: '75%'
+      },
 });
 const mapStateToProps = state => ({
     ItemsYonker: state.items
@@ -136,6 +172,9 @@ class AdminFrom extends Component{
             Syon:'',
         }
     }
+    setAllStateEmpty =()=>{
+        this.setState({imagen:'',nombre:'',pieza:'',modelo:'',marca: '',ubicacion: '',})
+    }
 
     handleChange=(name,event)=>{
         this.setState({[name]: event.target.value});
@@ -143,18 +182,26 @@ class AdminFrom extends Component{
 
     submitToStateCars=()=>{
         this.props.createItemCar(this.state.imagen,this.state.nombre,this.state.pieza,this.state.modelo,this.state.marca);
+        this.handleClose1();
+        this.setAllStateEmpty();
     }
 
     submitToStateBike=()=>{
         this.props.createItemBike(this.state.imagen,this.state.nombre,this.state.pieza,this.state.modelo,this.state.marca);
+        this.handleClose2();
+        this.setAllStateEmpty();
     }
 
     submitToStateMoto=()=>{
         this.props.createItemMoto(this.state.imagen,this.state.nombre,this.state.pieza,this.state.modelo,this.state.marca);
+        this.handleClose3();
+        this.setAllStateEmpty();
     }
 
     submitToStateYonk=()=>{
         this.props.createItemYonk(this.state.imagen,this.state.nombre,this.state.ubicacion);
+        this.handleClose4();
+        this.setAllStateEmpty();
     }
 
     handleClickOpen1 = () => {
@@ -194,19 +241,19 @@ class AdminFrom extends Component{
     render(){
         let filterCar = this.props.ItemsYonker.itemsCarros.filter(
             (carro)=>{
-                return carro.nombre.toLowerCase().indexOf(this.state.Scar.toLowerCase()) !== -1;
+                return carro.pieza.toLowerCase().indexOf(this.state.Scar.toLowerCase()) !== -1;
             }
         )
 
         let filterBike = this.props.ItemsYonker.itemsBici.filter(
             (bici)=>{
-                return bici.nombre.toLowerCase().indexOf(this.state.Sbike.toLowerCase()) !== -1;
+                return bici.pieza.toLowerCase().indexOf(this.state.Sbike.toLowerCase()) !== -1;
             }
         )
 
         let filterMoto = this.props.ItemsYonker.itemsMotos.filter(
             (moto)=>{
-                return moto.nombre.toLowerCase().indexOf(this.state.Smoto.toLowerCase()) !== -1;
+                return moto.pieza.toLowerCase().indexOf(this.state.Smoto.toLowerCase()) !== -1;
             }
         )
 
@@ -512,6 +559,36 @@ class AdminFrom extends Component{
                             })}
                         </GridList>
                     </Paper>
+                </div>
+
+                <div>
+                    <TextField
+                    className={classes.textField1}
+                    value={this.state.Scar}
+                    onChange={this.handleChange.bind(this,'Scar')}
+                    label="Nombre de la pieza"
+                    />
+
+                    <TextField
+                    className={classes.textField2}
+                    value={this.state.Sbike}
+                    onChange={this.handleChange.bind(this,'Sbike')}
+                    label="Nombre de la pieza"
+                    />
+
+                    <TextField
+                    className={classes.textField3}
+                    value={this.state.Smoto}
+                    onChange={this.handleChange.bind(this,'Smoto')}
+                    label="Nombre de la pieza"
+                    />
+
+                    <TextField
+                    className={classes.textField4}
+                    value={this.state.Syon}
+                    onChange={this.handleChange.bind(this,'Syon')}
+                    label="Nombre del Yonker"
+                    />
                 </div>
             </div>
 
