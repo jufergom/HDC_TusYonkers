@@ -7,6 +7,7 @@ import configureStore from "./modules/store";
 import LoginAdminJonkers from "./components/Login";
 import Principal from "./components/Principal";
 import ChatClientService from "./components/Chat";
+import AdminFrom from "./components/Admin";
 
 const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
 
@@ -16,6 +17,7 @@ const routing = (
       <Route exact path="/" component={Principal}></Route>
       <Route path ="/Login" component={LoginAdminJonkers}></Route>
       <Route path ="/Contact" component={ChatClientService}></Route>
+      <Route path ="/Admin" component={AdminFrom}></Route>
     </Switch>
   </Router>
 );
@@ -26,10 +28,6 @@ class App extends Component {
     return (
       <div className="BackgroundDiv">
           <header></header>
-
-
-
-
           {/* Redux */}
           <div>
           <ReduxProvider store={reduxStore}>

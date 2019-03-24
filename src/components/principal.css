@@ -37,7 +37,7 @@ div.contenedor {
 }
 
 nav {
-    width: 1200px;
+    width: auto;
     margin: 0 auto;
     position: relative;
 }
@@ -88,5 +88,5 @@ nav ul li:hover {
 
 .NavBar{
     align-items: center;
-    padding-left: 8%;
+    padding-left: 10%;
 }

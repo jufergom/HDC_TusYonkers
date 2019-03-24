@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import {withStyles, Button, TextField, Card, CardHeader, Avatar, CardContent, Typography} from "@material-ui/core";
+import Principal from "./Principal";
 const styles=theme=>({
     card: {
         maxWidth: 400,
-        backgroundColor: '#85d9ef'
+        backgroundColor: '#85d9ef',
+        marginTop: '0%',
+        marginBottom:'10%',
+        marginLeft:'35%'
       },
       avatar: {
         backgroundColor: '#a7c4e2',
@@ -26,6 +30,9 @@ const styles=theme=>({
       Text:{
           color: '#ffffff',
           textAlign: 'start',
+      },
+      container:{
+        margin: '0 auto',
       }
 });
 
@@ -35,6 +42,11 @@ class ChatClientService extends Component{
         const { classes } = this.props;
         return(
             <div>
+              <div className={classes.container}> 
+                <header>
+                  <Principal/>
+                </header>
+              </div>
                 <Card className={classes.card}>
                     <CardHeader
                     avatar={

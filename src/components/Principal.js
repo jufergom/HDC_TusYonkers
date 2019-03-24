@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import  {Route, BrowserRouter as Router, Switch, Link} from "react-router-dom";
 import './principal.css';
+import Logo from '../images/Logo1.png';
 
 class Principal extends Component {
     render() {
@@ -9,14 +10,14 @@ class Principal extends Component {
                 <header>
                     <div className="contenedor">
                         <div className="logo">
-                            <img src={require('../images/Logo1.png')} className="logoImage"/>
+                            <img src={Logo} className="logoImage" alt="Logo_Name"/>
                         </div>
                     </div>
                 </header>
                 <div className="navegacion">
                     <nav>
                         <ul className="NavBar">
-                        <li><a href="#">Yonkers</a></li>
+                        <li><Link to="/">TusYonkers</Link></li>
                         
                         <li><a href="#">Repuestos</a>
                             <ul>

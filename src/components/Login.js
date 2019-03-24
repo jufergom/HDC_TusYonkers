@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import {withStyles, Button, Paper, TextField} from "@material-ui/core";
 import imgL from '../images/Logo1.png'
-import ChatClientService from './Chat';
+import Link from "react-router-dom/Link";
+import { Redirect } from "react-router-dom";
 
 const styles=theme=>({
     root: {
@@ -34,7 +35,7 @@ const styles=theme=>({
   }
 });
 
-/*const NextPage = <ChatClientService/>*/
+const NextPage = <Redirect to="/Admin"/>
 
 class LoginAdminJonkers extends Component{
     constructor(pros){
@@ -42,8 +43,7 @@ class LoginAdminJonkers extends Component{
         this.state ={
           user:'',
           password:'',
-          check: false,
-          test: false,
+          
         }
       }
     
@@ -92,7 +92,8 @@ class LoginAdminJonkers extends Component{
 
                       <br/>
 
-                      <Button variant="contained" color="primary" className={classes.button} onClick={this.CheckAccount.bind(this)} >Enter</Button>
+                      <Button variant="contained" color="primary" className={classes.button} onClick={this.CheckAccount.bind(this)} >Entrar</Button>
+                      <Button variant="contained" color="primary" component={Link} to="/" className={classes.button}>Atras</Button>
                       </Paper>
                     </div>
                 </form>
