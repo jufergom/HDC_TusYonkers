@@ -19,12 +19,10 @@ class NavBar extends Component {
                     <nav>
                         <ul className="NavBar">
                         <li><Link to="/">TusYonkers</Link></li>
-                        
                         <li><a>Repuestos</a>
                             <ul>
                             <li><Link to="/ListCars">Carros</Link></li>
                             <li><Link to="/ListMoto">Motocicletas</Link></li>
-                            <li><Link to="/ListBike">Bicicletas</Link></li>
                             </ul>
                         </li>
                         <li><li><Link to="/">Yonkers</Link></li></li>
