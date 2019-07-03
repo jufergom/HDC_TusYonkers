@@ -33,7 +33,6 @@ class App extends Component {
   render() {
     return (
       <div className="BackgroundDiv">
-          <header></header>
           {/* Redux */}
           <div>
           <ReduxProvider store={reduxStore}>

@@ -18,7 +18,7 @@ class NavBar extends Component {
                 <div className="navegacion">
                     <nav>
                         <ul className="NavBar">
-                        <li><Link to="/">TusYonkers</Link></li>
+                        <li><Link to="/">Inicio</Link></li>
                         <li><a>Repuestos</a>
                             <ul>
                             <li><Link to="/ListCars">Carros</Link></li>
