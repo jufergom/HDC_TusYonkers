@@ -21,9 +21,9 @@ class Principal extends Component {
 			<section id="first" className="main">
 				<header>
 					<div className="container">
-						<h2>Encuentra todos tus yonkers en un solo lugar</h2>
-						<p style={{color: "black"}}>Revisa los diferentes yonkers que existen y compara precios de las autopartes que estos venden.<br />
-						Todo esto sin salir de tu casa.</p>
+						<h2>Encuentra todos tus yonkers y todas las autopartes en un solo lugar</h2>
+						<p style={{color: "black"}}>Visita los diferentes yonkers que existen desde la comodidad de tu casa. <br />
+						Encuentra, compara y compra tus repuestos en linea.</p>
 					</div>
 				</header>
 			</section>	
@@ -35,7 +35,7 @@ class Principal extends Component {
 				<section id="fourth" className="main">
 				<header>
 					<div className="container">
-						<h2>Posees un yonker y deseas afiliarte con nosotros? Contactanos</h2>
+						<h2>¿Posees un yonker y deseas ser parte de nosotros? Contactanos</h2>
 					</div>
 				</header>
 			</section>
