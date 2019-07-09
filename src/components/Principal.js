@@ -35,14 +35,16 @@ class Principal extends Component {
 				<section id="fourth" className="main">
 				<header>
 					<div className="container">
-						<h2>¿Posees un yonker y deseas ser parte de nosotros? Contactanos</h2>
+						<h2>¿Posees un yonker y deseas ser parte de nosotros?</h2>
+						<h2>Afilia tu yonker: servicioalcliente@tusyokers.com</h2>
 					</div>
 				</header>
 			</section>
                 <section id="footer">
 
 					<SocialIcon url="https://www.instagram.com/tusyonkershn/" bgColor="white" target="_blank" />
-
+					<SocialIcon url="https://www.facebook.com/tusyonkershn/" bgColor="white" target="_blank" />
+					
 				<div className="copyright">
 					<ul className="menu">
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
